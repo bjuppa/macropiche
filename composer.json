@@ -1,0 +1,34 @@
+{
+  "name": "fewagency/macropiche",
+  "description": "Display items in a pattern library",
+  "keywords": [
+    "pattern",
+    "library",
+    "components",
+    "atomic",
+    "snippet",
+    "template",
+    "sample",
+    "sheet",
+    "html"
+  ],
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bjorn Nilsved",
+      "email": "bjorn.nilsved@fewagency.se"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "require-dev": {
+    "illuminate/view": "^5.2"
+  },
+  "autoload": {
+    "files": [
+      "src/macropiche.php"
+    ]
+  }
+}

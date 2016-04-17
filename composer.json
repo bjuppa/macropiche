@@ -1,6 +1,6 @@
 {
   "name": "fewagency/macropiche",
-  "description": "Display items in a pattern library",
+  "description": "HTML display of view-templates (of a pattern library)",
   "keywords": [
     "pattern",
     "library",

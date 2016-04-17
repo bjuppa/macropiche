@@ -8,5 +8,7 @@ require __DIR__ . '/../vendor/autoload.php';
 <?= macropiche('patterns/typography.html') ?>
 <h2>PHP</h2>
 <?= macropiche('patterns/calculation.php', ['b' => 5]) ?>
+<h2>Blade</h2>
+<?= macropiche('patterns/list.blade.php', ['title' => 'List']) ?>
 </body>
 </html>

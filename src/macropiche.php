@@ -34,7 +34,8 @@ if (!function_exists('macropiche')) {
 
                 return $parsed_content;
             };
-            //TODO: set another parser for blade template files
+            //TODO: set another parser (and content-getter?) for blade template files
+            //Perhaps we should use the globally blade parser if one is accessible, and create our own blade parser only if $path ends with '.blade.php'?
 
             // Render the output using the parser
             $output = call_user_func_array($parser, compact('path', 'context'));

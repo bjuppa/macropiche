@@ -2,7 +2,7 @@
 PHP tool for display of view-templates in HTML.
 
 If you're building a pattern/component library, this simple tool will display its parts to designers, developers, and clients!
-It's basically one helper method that you can place anywhere within your PHP:
+It's basically one helper function that you can place anywhere within your PHP:
 
 ```php
 <?= macropiche('path/to/template') ?>
@@ -17,12 +17,17 @@ This will render an HTML `<div>` containing simple markup of:
 
 ## Background
 Some reading on display patterns and atomic design - thinking that `macropiche` is designed to support:
-http://danielmall.com/articles/content-display-patterns/
-http://alistapart.com/article/from-pages-to-patterns-an-exercise-for-everyone
-http://bradfrost.com/blog/post/atomic-web-design/
+
+- http://danielmall.com/articles/content-display-patterns/
+- http://alistapart.com/article/from-pages-to-patterns-an-exercise-for-everyone
+- http://bradfrost.com/blog/post/atomic-web-design/
 
 ## Usage
+The helper function can be used within any PHP file or PHP-based template using
+`echo macropiche()` or `<?= macropiche() ?>`.
+
 ```php
+/**
 * @param $path string Relative or absolute path to template/view file
 * @param $context mixed Optional data for the template parser
 * @return string HTML

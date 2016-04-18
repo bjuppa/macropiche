@@ -4,8 +4,8 @@ if (!function_exists('macropiche')) {
 
     /**
      * Generate and return a string of HTML displaying:
-     * - a file path
-     * - the original file content
+     * - the file path
+     * - the original file contents
      * - the processed file output as code (unless equal to original file content)
      * - the processed file output as HTML
      *

@@ -17,12 +17,18 @@ if (!function_exists('macropiche')) {
     {
         $base_css_class = __FUNCTION__;
 
-        $ob_level = ob_get_level();
-        // Parse the template file
+        // Parse the template file...
+        $detected_language = 'html'; // Set language to HTML as default
+        $file_contents = ''; // Set empty file contents as default
+        $initial_ob_level = ob_get_level(); // Save the output buffer level for cleaning up afterwards
         try {
             $file_contents = file_get_contents($path, FILE_USE_INCLUDE_PATH);
 
-            // Standard parser for PHP and HTML template files
+            if (substr($path, -4) == '.php') {
+                $detected_language = 'php';
+            }
+
+            // Declare the standard parser for PHP and HTML template files
             $parser = function ($path, $context) {
                 if (!is_array($context)) {
                     $context = (array)$context;
@@ -38,17 +44,20 @@ if (!function_exists('macropiche')) {
             // Render the output using the parser
             $output = call_user_func_array($parser, compact('path', 'context'));
         } catch (Exception $e) {
-            while (ob_get_level() > $ob_level) {
-                ob_end_clean();
-            }
             // Any file- or parsing-related failures will be echoed in the output
             $output = $e->getMessage();
         }
+        // Clean up the output buffer
+        while (ob_get_level() > $initial_ob_level) {
+            ob_end_clean();
+        }
+
+        // Build the HTML...
 
         // The file path
         $html_parts[] = '<code class="' . htmlentities($base_css_class . '__path') . '"><em>' . htmlentities($path) . '</em></code>';
         // The file contents
-        $html_parts[] = '<pre class="' . htmlentities($base_css_class . '__code') . '"><code class="language-[DETECTED LANGUAGE]" title="File contents">' . htmlentities($file_contents) . '</code></pre>';
+        $html_parts[] = '<pre class="' . htmlentities($base_css_class . '__code') . '"><code class="language-' . htmlentities($detected_language) . '" title="File contents">' . htmlentities($file_contents) . '</code></pre>';
         // The HTML output
         if ($output != $file_contents) {
             $html_parts['htmloutput'] = '<pre class="' . htmlentities($base_css_class . '__code-output') . '"><samp class="language-html" title="HTML output">' . htmlentities($output) . '</samp></pre>';

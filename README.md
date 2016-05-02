@@ -24,7 +24,7 @@ Some reading on display patterns and atomic design - thinking that `macropiche` 
 
 ## Usage
 The helper function can be used within any PHP file or PHP-based template using
-`echo macropiche()` or `<?= macropiche() ?>`.
+`echo` or `<?=`.
 
 ```php
 /**

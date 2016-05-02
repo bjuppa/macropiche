@@ -53,8 +53,8 @@ but we'll probably add that.
 We have support for Blade first in the feature pipeline, then Twig too!
 
 ## Alternatives
-http://patternlab.io is another way of building your HTML component library for display.
-It generates a full website, whereas this package aims to provide a simpler toolset
+http://patternlab.io and https://github.com/devbridge/Styleguide are other ways of building your HTML component library for display.
+They generate a full website, whereas this package aims to provide a simpler toolset
 for usage within your existing project.
 
 ## Authors

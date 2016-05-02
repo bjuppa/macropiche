@@ -15,6 +15,9 @@ This will render an HTML `<div>` containing simple markup of:
 - the processed file output as code (unless equal to original file content)
 - the processed file output as HTML
 
+## Installation
+> composer require fewagency/macropiche
+
 ## Background
 Some reading on display patterns and atomic design - thinking that `macropiche` is designed to support:
 

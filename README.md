@@ -55,6 +55,8 @@ The path display element is a good candidate for catching click events for toggl
 This package doesn't yet contain any convenience assets like CSS or javascript to optionally pull in to your page,
 but we'll probably add that.
 
+You may want to add `white-space: pre-wrap;` to the `<pre>` blocks within `macropiche` to wrap any long lines of code.
+
 ## Usage with Blade and Twig templates
 `macropiche` currently supports HTML and PHP template files.
 We have support for Blade first in the feature pipeline, then Twig too!

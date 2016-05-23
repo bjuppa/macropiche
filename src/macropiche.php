@@ -60,7 +60,7 @@ if (!function_exists('macropiche')) {
         $html_parts[] = '<pre class="' . htmlentities($base_css_class . '__code') . '"><code class="language-' . htmlentities($detected_language) . '" title="File contents">' . htmlentities($file_contents) . '</code></pre>';
         // The HTML output
         if ($output != $file_contents) {
-            $html_parts['htmloutput'] = '<pre class="' . htmlentities($base_css_class . '__code-output') . '"><samp class="language-html" title="HTML output">' . htmlentities($output) . '</samp></pre>';
+            $html_parts['htmloutput'] = '<samp class="' . htmlentities($base_css_class . '__code-output') . '"><pre><code class="language-html" title="HTML output">' . htmlentities($output) . '</code></pre></samp>';
         }
         // The raw output
         $html_parts[] = '<div class="' . htmlentities($base_css_class . '__output') . '">';

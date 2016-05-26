@@ -42,7 +42,7 @@ function macropiche($path, $context = null)
 The `$context` is usually an array of variable names and values to populate the template.
 
 ## Examples
-The [examples](/examples) contains a [quick test php file]('/examples/test.php') to get you started
+The [examples](/examples) contains a [quick test php file]('examples/test.php') to get you started
 and showcase the helper method used in a php file.
 
 ## Styling and scripting

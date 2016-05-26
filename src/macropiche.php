@@ -10,7 +10,7 @@ if (!function_exists('macropiche')) {
      * - the processed file output as HTML
      *
      * @param $path string Relative or absolute path to template/view file
-     * @param $context mixed Optional data for the template parser
+     * @param $context array|mixed Optional data for the template parser
      * @return string HTML
      */
     function macropiche($path, $context = null)

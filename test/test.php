@@ -3,7 +3,7 @@ require __DIR__ . '/../vendor/autoload.php';
 ?>
 <html>
 <head>
-    <!-- Put a prism.css file in the folder you're viewing the test output from to test Prism syntax highlighting -->
+    <!-- Put prism.css and prism.js files or softlinks in the folder you're viewing the test output from to test Prism syntax highlighting -->
     <link rel="stylesheet" href="prism.css" />
 </head>
 <body>
@@ -21,7 +21,6 @@ require __DIR__ . '/../vendor/autoload.php';
 <p>A Blade template should be rendered as the file's blade content, the generated HTML, and the HTML put into the page.</p>
 <?= macropiche('patterns/list.blade.php', ['title' => 'List']) ?>
 
-<!-- Put a prism.js file in the folder you're viewing the test output from to test Prism syntax highlighting -->
 <script src="prism.js"></script>
 </body>
 </html>

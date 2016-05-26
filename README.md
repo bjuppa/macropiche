@@ -42,7 +42,7 @@ function macropiche($path, $context = null)
 The `$context` is usually an array of variable names and values to populate the template.
 
 ## Examples
-The (examples)[/examples] contains a (quick test php file)['/examples/test.php'] to get you started
+The [examples](/examples contains a [quick test php file]('/examples/test.php') to get you started
 and showcase the helper method used in a php file.
 
 ## Styling and scripting
@@ -60,7 +60,7 @@ e.g. `language-php` for PHP code.
 This is useful with code highlighters like [Prism](http://prismjs.com).
 Why not use
 [the same configuration the Laravel docs use](http://prismjs.com/download.html?themes=prism&languages=markup+twig+css+clike+javascript+php+php-extras+scss+bash+sql+apacheconf+git+handlebars&plugins=line-numbers)?
-Generated Prism files can also be found among the (assets of this package)[/assets] for quick use. 
+Generated Prism files can also be found among the [assets of this package](/assets) for quick use.
 
 The `<samp>` element is used to display the processed output, with a `<pre><code class="language-html">` inside.
 It's not often one gets the opportunity to properly use `<samp>`,

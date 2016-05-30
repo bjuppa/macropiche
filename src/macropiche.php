@@ -54,8 +54,12 @@ if (!function_exists('macropiche')) {
 
         // Build the HTML...
 
+        // Generate ids for elements
+        $html_id = substr(sha1($path . serialize($context)), 0, 6);
+        $html_code_id = $html_id . '-code';
+
         // The file path
-        $html_parts[] = '<code class="' . htmlentities($base_css_class . '__path') . '"><em>' . htmlentities($path) . '</em></code>';
+        $html_parts[] = '<a href="#' . $html_id . '" class="' . htmlentities($base_css_class . '__path') . '"><code>' . htmlentities($path) . '</code></a>';
         // The file contents
         $html_parts[] = '<pre class="' . htmlentities($base_css_class . '__code') . '"><code class="language-' . htmlentities($detected_language) . '" title="File contents">' . htmlentities($file_contents) . '</code></pre>';
         // The HTML output
@@ -70,7 +74,7 @@ if (!function_exists('macropiche')) {
         $html_parts[] = '<div>';
 
         // Wrap the output parts in a div
-        array_unshift($html_parts, '<div class="' . htmlentities($base_css_class) . '">');
+        array_unshift($html_parts, '<div class="' . htmlentities($base_css_class) . '" id="' . $html_id . '">');
         array_push($html_parts, '</div>');
 
         return implode("\n", $html_parts);

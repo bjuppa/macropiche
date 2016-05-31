@@ -58,7 +58,7 @@ if (!function_exists('macropiche')) {
 
         // Generate ids for elements
         $html_id = substr(sha1($path . serialize($context)), 0, 6);
-        preg_match("/(([^\\/]+\\/){0,2}[^.\\/]+)[^\\/]*$/", $path, $matches);
+        preg_match("/(([^\\/.]+\\/){0,2}[^.\\/]+)[^\\/]*$/", $path, $matches);
         $html_id .= '-' . $matches[1];
         $html_code_id = $html_id . '-code';
 

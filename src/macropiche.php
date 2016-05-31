@@ -22,7 +22,11 @@ if (!function_exists('macropiche')) {
         $file_contents = ''; // Set empty file contents as default
         $initial_ob_level = ob_get_level(); // Save the output buffer level for cleaning up afterwards
         try {
-            $file_contents = file_get_contents($path, FILE_USE_INCLUDE_PATH);
+            $file_contents = @file_get_contents($path, FILE_USE_INCLUDE_PATH);
+            if ($file_contents === false) {
+                $error = error_get_last();
+                throw new Exception($error['message']);
+            }
 
             if (substr($path, -4) == '.php') {
                 $detected_language = 'php';
@@ -35,7 +39,7 @@ if (!function_exists('macropiche')) {
                 }
                 extract($context);
                 ob_start();
-                @include($path);
+                include($path);
                 $parsed_content = ob_get_clean();
 
                 return $parsed_content;
@@ -57,7 +61,7 @@ if (!function_exists('macropiche')) {
         // Generate ids for elements
         $html_id = substr(sha1($path . serialize($context)), 0, 6);
         //TODO: add part of path to $html_id see https://github.com/fewagency/macropiche/issues/4
-        $html_id .= substr($path, strrpos($path, './'));
+        $html_id .= '-' . implode('/', array_slice(explode('/', substr($path, strrpos($path, './'))), -3));
         $html_code_id = $html_id . '-code';
 
         // The file path

@@ -4,7 +4,7 @@ require __DIR__ . '/../vendor/autoload.php';
 <html>
 <head>
     <!-- Put prism.css and prism.js files or softlinks in the folder you're viewing the test output from to test Prism syntax highlighting -->
-    <link rel="stylesheet" href="prism.css" />
+    <link rel="stylesheet" href="prism.css"/>
 </head>
 <body>
 <h1>Macropiche test</h1>
@@ -18,8 +18,14 @@ require __DIR__ . '/../vendor/autoload.php';
 <?= macropiche('patterns/calculation.php', ['b' => 5]) ?>
 
 <h2>Blade template</h2>
-<p>A Blade template should be rendered as the file's blade content, the generated HTML, and the HTML put into the page.</p>
+<p>
+    A Blade template should be rendered as the file's blade content, the generated HTML, and the HTML put into the page.
+</p>
 <?= macropiche('patterns/list.blade.php', ['title' => 'List']) ?>
+
+<h2>Missing template</h2>
+<p>A missing template should render an error message.</p>
+<?= macropiche('patterns/missing.html') ?>
 
 <script src="prism.js"></script>
 </body>

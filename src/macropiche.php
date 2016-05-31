@@ -35,7 +35,7 @@ if (!function_exists('macropiche')) {
                 }
                 extract($context);
                 ob_start();
-                include($path);
+                @include($path);
                 $parsed_content = ob_get_clean();
 
                 return $parsed_content;
@@ -57,17 +57,20 @@ if (!function_exists('macropiche')) {
         // Generate ids for elements
         $html_id = substr(sha1($path . serialize($context)), 0, 6);
         //TODO: add part of path to $html_id see https://github.com/fewagency/macropiche/issues/4
+        $html_id .= substr($path, strrpos($path, './'));
         $html_code_id = $html_id . '-code';
 
         // The file path
         $html_parts[] = '<a href="#' . $html_id . '" class="' . htmlentities($base_css_class . '__path') . '"><code>' . htmlentities($path) . '</code></a>';
         // Anchor for source output (The tag is empty because only relevant with special styling anyway)
         $html_parts[] = '<a href="#' . $html_code_id . '" id="' . $html_code_id . '" title="Source"></a>';
-        // The file contents
-        $html_parts[] = '<pre class="' . htmlentities($base_css_class . '__code') . '"><code class="language-' . htmlentities($detected_language) . '" title="File contents">' . htmlentities($file_contents) . '</code></pre>';
-        // The HTML output
-        if ($output != $file_contents) {
-            $html_parts['htmloutput'] = '<samp class="' . htmlentities($base_css_class . '__code-output') . '"><pre><code class="language-html" title="HTML output">' . htmlentities($output) . '</code></pre></samp>';
+        if ($file_contents) {
+            // The file contents
+            $html_parts[] = '<pre class="' . htmlentities($base_css_class . '__code') . '"><code class="language-' . htmlentities($detected_language) . '" title="File contents">' . htmlentities($file_contents) . '</code></pre>';
+            // The HTML output
+            if ($output != $file_contents) {
+                $html_parts['htmloutput'] = '<samp class="' . htmlentities($base_css_class . '__code-output') . '"><pre><code class="language-html" title="HTML output">' . htmlentities($output) . '</code></pre></samp>';
+            }
         }
         // The raw output
         $html_parts[] = '<div class="' . htmlentities($base_css_class . '__output') . '">';

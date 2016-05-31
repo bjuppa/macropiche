@@ -25,7 +25,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 <h2>Missing template</h2>
 <p>A missing template should render an error message.</p>
-<?= macropiche('patterns/missing.html') ?>
+<?= macropiche('1/2/3/missing.html') ?>
 
 <script src="prism.js"></script>
 </body>

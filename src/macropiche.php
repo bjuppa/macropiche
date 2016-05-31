@@ -60,8 +60,8 @@ if (!function_exists('macropiche')) {
 
         // Generate ids for elements
         $html_id = substr(sha1($path . serialize($context)), 0, 6);
-        //TODO: add part of path to $html_id see https://github.com/fewagency/macropiche/issues/4
-        $html_id .= '-' . implode('/', array_slice(explode('/', substr($path, strrpos($path, './'))), -3));
+        $html_id .= '-' . implode('/', array_slice(explode('/', $path), -3));
+        // TODO: strip any file ending from $html_id
         $html_code_id = $html_id . '-code';
 
         // The file path

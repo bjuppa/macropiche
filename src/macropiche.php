@@ -56,20 +56,13 @@ if (!function_exists('macropiche')) {
             ob_end_clean();
         }
 
-        // Build the HTML...
-
         // Generate ids for elements
         $html_id = substr(sha1($path . serialize($context)), 0, 6);
-        $path_parts = explode('/', $path);
-        $last_path_part_key = count($path_parts) - 1;
-        if ($first_dot_position = strpos($path_parts[$last_path_part_key], '.')) {
-            // Remove any file ending from path
-            $path_parts[$last_path_part_key] = substr($path_parts[$last_path_part_key], 0, $first_dot_position);
-        }
-        //TODO: if any part is . or .. only keep the path parts after that
-        $html_id .= '-' . implode('/', array_slice($path_parts, -3)); // Add up to 3 last parts of the path to the id
-
+        preg_match("/(([^\\/]+\\/){0,2}[^.\\/]+)[^\\/]*$/", $path, $matches);
+        $html_id .= '-' . $matches[1];
         $html_code_id = $html_id . '-code';
+
+        // Build the HTML...
 
         // The file path
         $html_parts[] = '<a href="#' . $html_id . '" class="' . htmlentities($base_css_class . '__path') . '"><code>' . htmlentities($path) . '</code></a>';

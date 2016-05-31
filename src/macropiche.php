@@ -60,8 +60,15 @@ if (!function_exists('macropiche')) {
 
         // Generate ids for elements
         $html_id = substr(sha1($path . serialize($context)), 0, 6);
-        $html_id .= '-' . implode('/', array_slice(explode('/', $path), -3));
-        // TODO: strip any file ending from $html_id
+        $path_parts = explode('/', $path);
+        $last_path_part_key = count($path_parts) - 1;
+        if ($first_dot_position = strpos($path_parts[$last_path_part_key], '.')) {
+            // Remove any file ending from path
+            $path_parts[$last_path_part_key] = substr($path_parts[$last_path_part_key], 0, $first_dot_position);
+        }
+        //TODO: if any part is . or .. only keep the path parts after that
+        $html_id .= '-' . implode('/', array_slice($path_parts, -3)); // Add up to 3 last parts of the path to the id
+
         $html_code_id = $html_id . '-code';
 
         // The file path

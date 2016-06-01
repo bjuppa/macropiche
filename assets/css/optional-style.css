@@ -2,13 +2,17 @@
   padding: 0.5rem 0;
 }
 
+.macropiche__path, .macropiche__source-anchor {
+  font-family: monospace;
+}
+
+.macropiche__source-anchor {
+  text-transform: lowercase;
+}
+
 .macropiche__output {
   padding: 0.5rem 0;
   border-style: solid none;
   border-width: 1px;
   border-color: lightgray;
-}
-
-.macropiche__source-anchor {
-  text-transform: lowercase;
 }

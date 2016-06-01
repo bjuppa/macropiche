@@ -20,7 +20,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 <h2>PHP template</h2>
 <p>A PHP template should be rendered as the file's PHP content, the generated HTML, and the HTML put into the page.</p>
-<?= macropiche('patterns/calculation.php', ['b' => 5]) ?>
+<?= macropiche('./patterns/calculation.php', ['b' => 5]) ?>
 
 <h2>Blade template</h2>
 <p>

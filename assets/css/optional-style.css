@@ -4,19 +4,19 @@
 
 .macropiche > a {
   font-family: monospace;
-  color: rgba(150,150,150,1);
+  color: rgba(100,100,100,1);
 }
 
 .macropiche__source-anchor {
   text-transform: lowercase;
 }
 
-.macropiche pre > code {
+.macropiche__code > code, .macropiche__code-output > pre > code {
   white-space: pre-wrap; /* Make code wrap to new lines, but only when necessary to fit */
 }
 
 .macropiche > hr {
   border: 0;
   height: 1px;
-  background-image: linear-gradient(to right, rgba(150,150,150,1), rgba(150,150,150,0.3));
+  background-image: linear-gradient(to right, rgba(100,100,100,0.7), rgba(100,100,100,0.2));
 }

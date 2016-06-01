@@ -8,3 +8,7 @@
   border-width: 1px;
   border-color: lightgray;
 }
+
+.macropiche__source-anchor {
+  text-transform: lowercase;
+}

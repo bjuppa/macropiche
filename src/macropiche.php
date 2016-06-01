@@ -66,9 +66,9 @@ if (!function_exists('macropiche')) {
 
         // The file path
         $html_parts[] = '<a href="#' . $html_id . '" class="' . htmlentities($base_css_class . '__path') . '"><code>' . htmlentities($path) . '</code></a>';
-        // Anchor for source output (The tag is empty because only relevant with special styling anyway)
-        $html_parts[] = '<a href="#' . $html_code_id . '" id="' . $html_code_id . '" title="Source"></a>';
         if ($file_contents) {
+            // Anchor for source output (The tag is empty because only relevant with special styling anyway)
+            $html_parts[] = '<a href="#' . $html_code_id . '" class="' . htmlentities($base_css_class . '__source-anchor') . '" id="' . $html_code_id . '" title="Source"></a>';
             // The file contents
             $html_parts[] = '<pre class="' . htmlentities($base_css_class . '__code') . '"><code class="language-' . htmlentities($detected_language) . '" title="File contents">' . htmlentities($file_contents) . '</code></pre>';
             // The HTML output

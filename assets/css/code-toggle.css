@@ -1,0 +1,23 @@
+/*
+Makes the code display sections hidden from start and uses the source-anchor element as a trigger to display it.
+*/
+
+.macropiche__code, .macropiche__code-output {
+  /* Hide the code display sections from start */
+  display: none;
+}
+
+.macropiche__source-anchor:before {
+  /* The trigger to display the source is an <a> without content, so make it visible by showing its title attribute */
+  content: attr(title);
+}
+
+.macropiche__source-anchor:target {
+  /* When the source anchor is the current target in url, hide it */
+  display: none;
+}
+
+.macropiche__source-anchor:target ~ .macropiche__code, .macropiche__source-anchor:target ~ .macropiche__code-output {
+  /* When a trigger is the current target in url, display its following code sections */
+  display: block;
+}

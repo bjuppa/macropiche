@@ -5,6 +5,9 @@ require __DIR__ . '/../vendor/autoload.php';
 <head>
     <!-- Put prism.css and prism.js files or softlinks in the folder you're viewing the test output from to test Prism syntax highlighting -->
     <link rel="stylesheet" href="prism.css"/>
+
+    <!-- Put code-toggle.css or a softlink to it in the folder you're viewing the test output from to test code toggling via css -->
+    <link rel="stylesheet" href="code-toggle.css"/>
 </head>
 <body>
 <h1>Macropiche test</h1>

@@ -8,6 +8,8 @@ require __DIR__ . '/../vendor/autoload.php';
 
     <!-- Put code-toggle.css or a softlink to it in the folder you're viewing the test output from to test code toggling via css -->
     <link rel="stylesheet" href="code-toggle.css"/>
+
+    <link rel="stylesheet" href="optional-style.css"/>
 </head>
 <body>
 <h1>Macropiche test</h1>

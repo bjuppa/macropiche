@@ -1,0 +1,10 @@
+.macropiche {
+  padding: 0.5rem 0;
+}
+
+.macropiche__output {
+  padding: 0.5rem 0;
+  border-style: solid none;
+  border-width: 1px;
+  border-color: lightgray;
+}

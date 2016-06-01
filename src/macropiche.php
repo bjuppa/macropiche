@@ -77,11 +77,13 @@ if (!function_exists('macropiche')) {
             }
         }
         // The raw output
+        $html_parts[] = '<hr>';
         $html_parts[] = '<div class="' . htmlentities($base_css_class . '__output') . '">';
         $html_parts[] = '<!-- Start of ' . htmlentities($path) . ' output -->';
         $html_parts[] = $output;
         $html_parts[] = '<!-- End of ' . htmlentities($path) . ' output -->';
         $html_parts[] = '</div>';
+        $html_parts[] = '<hr>';
 
         // Wrap the output parts in a div
         array_unshift($html_parts, '<div class="' . htmlentities($base_css_class) . '" id="' . $html_id . '">');

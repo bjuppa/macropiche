@@ -11,9 +11,13 @@
   text-transform: lowercase;
 }
 
-.macropiche__output {
-  padding: 0.5rem 0;
-  border-style: solid none;
-  border-width: 1px;
-  border-color: lightgray;
+.macropiche pre > code {
+  white-space: pre-wrap; /* Make the code wrap to new lines, but only when necessary to fit */
+}
+
+.macropiche > hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #333, #ccc);
 }

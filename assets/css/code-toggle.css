@@ -10,6 +10,10 @@ Makes the code display sections hidden from start and uses the source-anchor ele
 .macropiche__source-anchor:before {
   /* The trigger to display the source is an <a> without content, so make it visible by showing its title attribute */
   content: attr(title);
+
+  /* The source-anchor could also be a down-arrow using something like this:
+  content: '\21A7';
+  */
 }
 
 .macropiche__source-anchor:target {

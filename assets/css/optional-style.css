@@ -2,8 +2,9 @@
   padding: 0.5rem 0;
 }
 
-.macropiche__path, .macropiche__source-anchor {
+.macropiche > a {
   font-family: monospace;
+  color: gray;
 }
 
 .macropiche__source-anchor {

@@ -49,6 +49,7 @@ if (!function_exists('macropiche')) {
             $output = call_user_func_array($parser, compact('path', 'context'));
         } catch (Exception $e) {
             // Any file- or parsing-related failures will be echoed in the output
+            //TODO: wrap the error output message in some html, like <samp> perhaps?
             $output = $e->getMessage();
         }
         // Clean up the output buffer

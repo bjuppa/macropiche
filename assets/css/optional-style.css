@@ -4,7 +4,7 @@
 
 .macropiche > a {
   font-family: monospace;
-  color: gray;
+  color: rgba(150,150,150,1);
 }
 
 .macropiche__source-anchor {
@@ -12,12 +12,11 @@
 }
 
 .macropiche pre > code {
-  white-space: pre-wrap; /* Make the code wrap to new lines, but only when necessary to fit */
+  white-space: pre-wrap; /* Make code wrap to new lines, but only when necessary to fit */
 }
 
 .macropiche > hr {
   border: 0;
   height: 1px;
-  background: #333;
-  background-image: linear-gradient(to right, #333, #ccc);
+  background-image: linear-gradient(to right, rgba(150,150,150,1), rgba(150,150,150,0.3));
 }

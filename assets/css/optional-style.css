@@ -4,7 +4,7 @@
 
 .macropiche > a {
   font-family: monospace;
-  color: rgba(100,100,100,1);
+  color: rgba(127, 127, 127, 0.9);
 }
 
 .macropiche__source-anchor {
@@ -18,5 +18,6 @@
 .macropiche > hr {
   border: 0;
   height: 1px;
-  background-image: linear-gradient(to right, rgba(100,100,100,0.7), rgba(100,100,100,0.2));
+  background: rgba(127, 127, 127, 0.3);
+  background-image: linear-gradient(to right, rgba(127, 127, 127, 0.5), rgba(127, 127, 127, 0), rgba(127, 127, 127, 0.5));
 }

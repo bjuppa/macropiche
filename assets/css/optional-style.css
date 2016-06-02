@@ -22,6 +22,6 @@
 .macropiche > hr {
   border: 0;
   height: 1px;
-  background: rgba(127, 127, 127, 0.3);
-  background-image: linear-gradient(to right, rgba(127, 127, 127, 0.5), rgba(127, 127, 127, 0), rgba(127, 127, 127, 0.5));
+  background: rgba(127, 127, 127, 0.1);
+  background-image: linear-gradient(to right, rgba(127, 127, 127, 0.5), rgba(127, 127, 127, 0));
 }

@@ -1,7 +1,7 @@
 # `macropiche`
 PHP tool for display of view-templates in HTML.
 
-If you're building a pattern/component library, this simple tool will display its parts to
+If you're building a **pattern/component library**, this simple tool will display its parts to
 designers, developers, and clients for collaboration!
 It's basically one helper function that you can place anywhere within your PHP:
 
@@ -69,12 +69,12 @@ Generated Prism files can also be found among the [assets of this package](/asse
 `macropiche` currently supports HTML and PHP template files.
 We have support for Blade first in the feature pipeline, then Twig too!
 
-## `<samp>`
+## `<samp>`!
 The `<samp>` element is used to display the processed output, with a `<pre><code class="language-html">` inside.
 It's not often one gets the opportunity to properly use `<samp>`,
 this type of package must be one of the few useful applications for that poor tag!
 For those of you that have not yet read
-[the specification for the `<samp>` element](https://html.spec.whatwg.org/#the-samp-element),
+[the specification for the `<samp>` element](https://html.spec.whatwg.org/multipage/semantics.html#the-samp-element),
 I highly recommend it!
 
 ```html

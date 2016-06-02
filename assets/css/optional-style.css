@@ -11,6 +11,10 @@
   text-transform: lowercase;
 }
 
+.macropiche__code, .macropiche__code-output {
+  font-size: 0.8rem;
+}
+
 .macropiche__code > code, .macropiche__code-output > pre > code {
   white-space: pre-wrap; /* Make code wrap to new lines, but only when necessary to fit */
 }

@@ -1,15 +1,24 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 ?>
+<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Macropiche test</title>
+
     <!-- Put prism.css and prism.js files or softlinks in the folder you're viewing the test output from to test Prism syntax highlighting -->
-    <link rel="stylesheet" href="prism.css"/>
+    <link rel="stylesheet" href="prism.css">
 
     <!-- Put code-toggle.css or a softlink to it in the folder you're viewing the test output from to test code toggling via css -->
-    <link rel="stylesheet" href="code-toggle.css"/>
+    <link rel="stylesheet" href="code-toggle.css">
 
-    <link rel="stylesheet" href="optional-style.css"/>
+    <!-- Put optional-style.css or a softlink to it in the folder you're viewing the test output from to test the optional stylesheet -->
+    <link rel="stylesheet" href="optional-style.css">
+
 </head>
 <body>
 <h1>Macropiche test</h1>

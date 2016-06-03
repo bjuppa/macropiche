@@ -11,8 +11,8 @@
   text-transform: lowercase;
 }
 
-.macropiche__code, .macropiche__code-output {
-  font-size: 0.8rem;
+.macropiche__code > code, .macropiche__code-output > code {
+  font-family: monospace;
 }
 
 .macropiche__code > code, .macropiche__code-output > code {

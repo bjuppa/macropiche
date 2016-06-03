@@ -70,7 +70,7 @@ Generated Prism files can also be found among the [assets of this package](/asse
 We have support for Blade first in the feature pipeline, then Twig too!
 
 ## `<samp>`!
-The `<samp>` element is used to display the processed output, with a `<pre><code class="language-html">` inside.
+The `<samp>` element is used to display the processed output, within `<pre><code class="language-html">`.
 It's not often one gets the opportunity to properly use `<samp>`,
 this type of package must be one of the few useful applications for that poor tag!
 For those of you that have not yet read

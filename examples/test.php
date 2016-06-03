@@ -34,6 +34,7 @@ require __DIR__ . '/../vendor/autoload.php';
 <h2>Blade template</h2>
 <p>
     A Blade template should be rendered as the file's blade content, the generated HTML, and the HTML put into the page.
+    <strong>(Blade parsing is not yet implemented!)</strong>
 </p>
 <?= macropiche('patterns/list.blade.php', ['title' => 'List']) ?>
 

@@ -88,8 +88,9 @@ please get in touch and tell me!
 There are of course other ways of building your HTML component library for display, some examples:
 
 - http://patternlab.io
-- https://fbrctr.github.io
 - http://devbridge.github.io/Styleguide/
+- https://fbrctr.github.io
+- https://github.com/cloudfour/drizzle
 
 They all generate a full website, whereas this package aims to provide a simpler toolset
 for displaying templates within your existing project.

@@ -85,9 +85,13 @@ I highly recommend it!
 please get in touch and tell me!
 
 ## Alternatives
-http://patternlab.io and http://devbridge.github.io/Styleguide/
-are other ways of building your HTML component library for display.
-They generate a full website, whereas this package aims to provide a simpler toolset
+There are of course other ways of building your HTML component library for display, some examples:
+
+- http://patternlab.io
+- https://fbrctr.github.io
+- http://devbridge.github.io/Styleguide/
+
+They all generate a full website, whereas this package aims to provide a simpler toolset
 for displaying templates within your existing project.
 
 ## Authors

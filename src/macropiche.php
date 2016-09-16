@@ -9,7 +9,7 @@ if (!function_exists('macropiche')) {
      * - the processed file output as code (unless equal to original file content)
      * - the processed file output as HTML
      *
-     * @param $path string Relative or absolute path to template/view file
+     * @param $path    string Relative or absolute path to template/view file
      * @param $context array|mixed Optional data for the template parser
      * @return string HTML
      */
@@ -56,8 +56,11 @@ if (!function_exists('macropiche')) {
             ob_end_clean();
         }
 
-        // Generate ids for elements
-        $html_id = substr(sha1($path . serialize($context)), 0, 6);
+        //Prefix element ids with a letter to avoid selector starting with digit
+        $html_id = 'm';
+        //Make id reasonable unique for template and context by hashing
+        $html_id .= substr(sha1($path . serialize($context)), 0, 6);
+        //Pick up to 3 last segments of the template path, excluding the file ending
         preg_match("/(([^\\/.]+\\/){0,2}[^.\\/]+)[^\\/]*$/", $path, $matches);
         $html_id .= '-' . $matches[1];
         $html_code_id = $html_id . '-code';

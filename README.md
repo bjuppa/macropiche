@@ -26,6 +26,10 @@ Some reading on *display patterns* and *atomic design* - thinking that `macropic
 - http://alistapart.com/article/from-pages-to-patterns-an-exercise-for-everyone
 - http://bradfrost.com/blog/post/atomic-web-design/
 
+Reading on more advanced use of pattern libraries:
+- http://bradfrost.com/blog/post/anatomy-of-a-pattern-in-a-pattern-library/
+- https://www.smashingmagazine.com/taking-pattern-libraries-next-level/
+
 ## Usage
 The helper function can be used within any PHP file or PHP-based template using
 `echo` or `<?=`.

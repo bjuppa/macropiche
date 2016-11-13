@@ -2,9 +2,20 @@
   padding: 0.5rem 0;
 }
 
+/*
+  Why all the duplicate monospace and explicit sizes?
+  See http://code.stephenmorley.org/html-and-css/fixing-browsers-broken-monospace-font-handling/
+*/
+
 .macropiche > a {
-  font-family: monospace;
+  font-family: monospace, monospace;
+  font-size: .8125rem;
   color: rgba(127, 127, 127, 0.9);
+}
+
+.macropiche > a > code {
+  font-family: monospace, monospace;
+  font-size: 1em;
 }
 
 .macropiche__source-anchor {
@@ -12,7 +23,8 @@
 }
 
 .macropiche__code > code, .macropiche__code-output > code {
-  font-family: monospace;
+  font-family: monospace, monospace;
+  font-size: .8125rem;
 }
 
 .macropiche__code > code, .macropiche__code-output > code {

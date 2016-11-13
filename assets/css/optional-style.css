@@ -10,12 +10,14 @@
 .macropiche > a {
   font-family: monospace, monospace;
   font-size: .8125rem;
+  line-height: 1em;
   color: rgba(127, 127, 127, 0.9);
 }
 
 .macropiche > a > code {
   font-family: monospace, monospace;
   font-size: 1em;
+  line-height: inherit;
 }
 
 .macropiche__source-anchor {

@@ -5,7 +5,7 @@
 
 .macropiche > a {
   font-family: monospace, monospace;
-  font-size: .8125rem;
+  font-size: 0.8125em;
   line-height: 1;
   color: rgba(127, 127, 127, 0.9);
 }
@@ -22,7 +22,8 @@
 
 .macropiche__code > code, .macropiche__code-output > code {
   font-family: monospace, monospace;
-  font-size: .8125rem;
+  font-size: 0.8125em;
+  line-height: 1;
 }
 
 .macropiche__code > code, .macropiche__code-output > code {

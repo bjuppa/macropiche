@@ -70,7 +70,7 @@ Why not use
 Generated Prism files can also be found among the [assets of this package](/assets) for quick use.
 
 ## Usage with [Laravel Blade](https://laravel.com/docs/views) templates
-If `macropiche` is used within a Laravel environment that has a `view()` helper available, it will be used as rendering
+If `macropiche` is used within a Laravel environment that has a `view()` helper available, it will be used as the rendering
 engine for the templates it seems to support.
 
 In other situations you may declare your own helper called `macropiche_blade_view()`
@@ -81,7 +81,7 @@ Examples of usage with [`duncan3dc/blade`](https://github.com/duncan3dc/blade) a
 [examples/test-blade-duncan3dc.php](examples/test-blade-duncan3dc.php) and
 [examples/test-blade-jenssegers.php](examples/test-blade-jenssegers.php) respectively.
 
-With some Blade factories that implement the `getFinder()` method (like the one built into Laravel)
+With Blade factories that implement the `getFinder()` method (like the one built into Laravel)
 it's possible to reference templates with the Blade dot-syntax relative the Blade views folder
 instead of supplying full or relative paths to `macropiche`.
 

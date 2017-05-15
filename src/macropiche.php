@@ -9,29 +9,21 @@ if (!function_exists('macropiche')) {
      * - the processed file output as code (unless equal to original file content)
      * - the processed file output as HTML
      *
-     * @param $path    string Relative or absolute path to template/view file
+     * @param $file    string Relative or absolute path to template/view file
      * @param $context array|mixed Optional data for the template parser
      * @return string HTML
      */
-    function macropiche($path, $context = null)
+    function macropiche($file, $context = null)
     {
+        $path = $file;
         $base_css_class = __FUNCTION__;
 
         // Parse the template file...
         $detected_language = 'html'; // Set language to HTML as default
         $file_contents = ''; // Set empty file contents as default
         $initial_ob_level = ob_get_level(); // Save the output buffer level for cleaning up afterwards
+
         try {
-            $file_contents = @file_get_contents($path, FILE_USE_INCLUDE_PATH);
-            if ($file_contents === false) {
-                $error = error_get_last();
-                throw new Exception($error['message']);
-            }
-
-            if (substr($path, -4) == '.php') {
-                $detected_language = 'php';
-            }
-
             // Declare the standard parser for PHP and HTML template files
             $parser = function ($path, $context) {
                 if (!is_array($context)) {
@@ -45,9 +37,59 @@ if (!function_exists('macropiche')) {
                 return $parsed_content;
             };
 
+            // Attempt to use a Blade parser if available
+            if (interface_exists('Illuminate\Contracts\View\Factory')) {
+                if (function_exists('view') and view() instanceof Illuminate\Contracts\View\Factory) {
+                    $blade = view();
+                } elseif (function_exists('macropiche_blade_view')) {
+                    $blade = macropiche_blade_view();
+                }
+
+                if (!empty($blade)) {
+                    // Transform a blade view reference to a full path if possible
+                    if (is_callable([$blade, 'getFinder',]) and
+                        $blade->getFinder() instanceof \Illuminate\View\ViewFinderInterface and
+                        $blade->exists($file)
+                    ) {
+                        $path = $blade->getFinder()->find($file);
+                    }
+
+                    // Try to verify if blade can handle the path
+                    if (is_callable([$blade, 'getEngineFromPath'])) {
+                        try {
+                            $blade->getEngineFromPath($path);
+                            $blade_can_handle_path = true;
+                        } catch (Exception $e) {
+                            $blade_can_handle_path = false;
+                        }
+                    }
+
+                    if (!empty($blade_can_handle_path) or substr($path, -10) == '.blade.php') {
+                        $parser = function ($path, $context) use ($blade) {
+                            return $blade->file($path, $context ?: []);
+                        };
+                    }
+                }
+            }
+
+            if (substr($path, -4) == '.php') {
+                $detected_language = 'php';
+            }
+
+            if (substr($path, -10) == '.blade.php') {
+                $detected_language = 'php'; // Until there is a good syntax highlighter for blade
+            }
+
+            $file_contents = @file_get_contents($path, FILE_USE_INCLUDE_PATH);
+            if ($file_contents === false) {
+                $error = error_get_last();
+                throw new Exception($error['message']);
+            }
+
             // Render the output using the parser
             $output = call_user_func_array($parser, compact('path', 'context'));
-        } catch (Exception $e) {
+        } catch
+        (Exception $e) {
             // Any file- or parsing-related failures will be echoed in the output
             $output = '<samp class="macropiche__error" title="Error message">' . $e->getMessage() . '</samp>';
         }
@@ -68,7 +110,7 @@ if (!function_exists('macropiche')) {
         // Build the HTML...
 
         // The file path
-        $html_parts[] = '<a href="#' . $html_id . '" class="' . htmlentities($base_css_class . '__path') . '" title="Link to this section"><code>' . htmlentities($path) . '</code></a>';
+        $html_parts[] = '<a href="#' . $html_id . '" class="' . htmlentities($base_css_class . '__path') . '" title="Link to this section"><code>' . htmlentities($file) . '</code></a>';
         if ($file_contents) {
             // Anchor for source output (The tag is empty because only relevant with special styling anyway)
             $html_parts[] = '<a href="#' . $html_code_id . '" class="' . htmlentities($base_css_class . '__source-anchor') . '" id="' . $html_code_id . '" title="Source"></a>';

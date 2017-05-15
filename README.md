@@ -69,9 +69,25 @@ Why not use
 [the same configuration the Laravel docs use](http://prismjs.com/download.html?themes=prism&languages=markup+twig+css+clike+javascript+php+php-extras+scss+bash+sql+apacheconf+git+handlebars&plugins=line-numbers)?
 Generated Prism files can also be found among the [assets of this package](/assets) for quick use.
 
-## Usage with Blade and Twig templates
-`macropiche` currently supports HTML and PHP template files.
-We have support for Blade first in the feature pipeline, then Twig too!
+## Usage with [Laravel Blade](https://laravel.com/docs/views) templates
+If `macropiche` is used within a Laravel environment that has a `view()` helper available, it will be used as rendering
+engine for the templates it seems to support.
+
+In other situations you may declare your own helper called `macropiche_blade_view()`
+that should return an instance of `Illuminate\Contracts\View\Factory`
+(or similar - it's relaxed to work with Blade-packages that don't explicitly implement the interface).
+Examples of usage with [`duncan3dc/blade`](https://github.com/duncan3dc/blade) and
+[`jenssegers/blade`](https://github.com/jenssegers/blade) can be found in
+[examples/test-blade-duncan3dc.php](examples/test-blade-duncan3dc.php) and
+[examples/test-blade-jenssegers.php](examples/test-blade-jenssegers.php) respectively.
+
+With some Blade factories that implement the `getFinder()` method (like the one built into Laravel)
+it's possible to reference templates with the Blade dot-syntax relative the Blade views folder
+instead of supplying full or relative paths to `macropiche`.
+
+## Usage with Twig templates
+`macropiche` currently supports `HTML`, `PHP` and Blade template files.
+We have support for Twig next in the feature pipeline!
 
 ## `<samp>`!
 The `<samp>` element is used to display the processed output, within `<pre><code class="language-html">`.

@@ -36,11 +36,11 @@ The helper function can be used within any PHP file or PHP-based template using
 
 ```php
 /**
-* @param $path string Relative or absolute path to template/view file
+* @param $file    string Relative or absolute path to template/view file
 * @param $context array|mixed Optional data for the template parser
 * @return string HTML
 */
-function macropiche($path, $context = null)
+function macropiche($file, $context = null)
 ```
 
 The `$context` is usually an array of variable names and values to populate the template.

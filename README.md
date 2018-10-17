@@ -117,11 +117,4 @@ They all generate a full website, whereas this package aims to provide a simpler
 for displaying templates within your existing project.
 
 ## Authors
-I, Björn Nilsved, work at the largest communication agency in southern Sweden.
-We call ourselves [FEW](http://fewagency.se) (oh, the irony).
-From time to time we have positions open for web developers and programmers in the Malmö/Copenhagen area,
-so please get in touch!
-
-## License
-FEW Agency's `macropiche` is open-sourced software licensed under the
-[MIT license](http://opensource.org/licenses/MIT)
+I, Björn Nilsved, created this package while working at [FEW](http://fewagency.se).
